@@ -18,7 +18,7 @@ public class GunManagerAKM : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             GameObject bullet = null;
-            bullet = Instantiate(BulletPrefap, FirePoint.position, Quaternion.identity);
+            bullet = Instantiate(BulletPrefap, FirePoint.position, Quaternion.Euler(0,0,60));
 
             Rigidbody bulletPhyx = null;
             bulletPhyx = bullet.GetComponent<Rigidbody>();
