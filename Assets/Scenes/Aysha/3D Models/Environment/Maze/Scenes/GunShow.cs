@@ -4,20 +4,25 @@ public class GunShow : MonoBehaviour
 {
 
     [Header("Weapon Settings")]
-    public GameObject weapon; // ÇÓÍÈ ÇáÓáÇÍ åäÇ
+    public GameObject weapon;
 
     void Start()
     {
         if (weapon != null)
-            weapon.SetActive(false); // ÅÎİÇÁ ÚäÏ ÇáÈÏÁ
+            weapon.SetActive(false); 
     }
 
     void Update()
     {
-        // íÙåÑ ÚäÏ ÇáÖÛØ Úáì W æáÇ íÎÊİí ÈÚÏåÇ
-        if (Input.GetKeyDown(KeyCode.W) && !weapon.activeSelf)
+        if (Input.GetKey(KeyCode.W))  
         {
-            weapon.SetActive(true); // ÊİÚíá äåÇÆí
-        }
+            if (weapon != null && !weapon.activeSelf)
+                weapon.SetActive(true);
+        }
+        else // ÚäÏ ÊÑß ÇáÒÑ
+        {
+            if (weapon != null && weapon.activeSelf)
+                weapon.SetActive(false);
+        }
     }
 }
