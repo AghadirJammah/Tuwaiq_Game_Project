@@ -19,20 +19,19 @@ public class EnmyChacing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(player.position);
+
         float distance = Vector3.Distance(transform.position, player.position);
-
-        if (distance <= chaseRange)
-        {
-            agent.SetDestination(player.position);
-            anim.Play("Zombie Run");
-        }
-
         if (distance <= attackRange)
         {
             anim.Play("Zombie Attack");
         }
+        else
+        {
+
+            agent.SetDestination(player.position);
+            anim.Play("Zombie Run");
+
+        }
 
     }
-    
 }
