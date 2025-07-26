@@ -8,6 +8,7 @@ public class EnmyChacing : MonoBehaviour
     public Transform player;
     public NavMeshAgent agent;
     public Animator anim;
+    
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -17,24 +18,17 @@ public class EnmyChacing : MonoBehaviour
     void Update()
     {
         agent.SetDestination(player.position);
+        float distance = Vector3.Distance(transform.position, player.position);
 
-    }
-    void OnTriggerEnter(Collider other)
-
-    {
-
-
-        if (other.CompareTag("Player"))
-
+        if (distance <= 2f) // Ãæ ÇáãÓÇÝÉ Çááí ÊÈí
         {
             anim.Play("Zombie Attack");
         }
-    }
-    void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        else
         {
             anim.Play("Zombie Run");
         }
+
     }
+    
 }
