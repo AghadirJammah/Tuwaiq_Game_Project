@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
+
 
 public class EnmyChacing : MonoBehaviour
 {
@@ -34,19 +36,19 @@ public class EnmyChacing : MonoBehaviour
         }
 
     }
-    
+
     void OnTriggerEnter(Collider other)
     {
-        
-
-        // ÇáÚÏæ íãæÊ ÅĞÇ ÃÕíÈ ÈÑÕÇÕÉ
         if (other.CompareTag("Bullet"))
         {
             Debug.Log("ÇáÚÏæ ãÇÊ ÈÓÈÈ ÇáÑÕÇÕÉ!");
-            anim.SetTrigger("isDying"); // ÇÓã ÃäíãíÔä ÇáãæÊ
-            Destroy(gameObject, 1.5f); // ÍĞİ ÇáÚÏæ ÈÚÏ 1.5 ËÇäíÉ
+            gameObject.SetActive(false); // íÎÊİí
         }
     }
 
 
 }
+
+
+
+
