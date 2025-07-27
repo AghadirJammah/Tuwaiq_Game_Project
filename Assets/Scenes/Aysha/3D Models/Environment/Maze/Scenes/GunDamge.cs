@@ -16,7 +16,7 @@ public class GunDamge : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         // نحاول نجيب سكربت EnemyHealth من الجسم المصطدم
-        EnemyHelth enemy = collision.gameObject.GetComponent<EnemyHelth>();
+        EnemyHealth enemy = collision.gameObject.GetComponent<EnemyHealth>();
         if (enemy != null)
         {
             enemy.TakeDamage(damage);  // ⚡ ضرر 50 لكل طلقة
