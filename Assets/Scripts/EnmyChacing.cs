@@ -34,4 +34,13 @@ public class EnmyChacing : MonoBehaviour
         }
 
     }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player")) 
+        {
+            Debug.Log("ÊÚÑÖ ÇááÇÚÈ áåÌæã ãä ÇáÚÏæ!");  
+            
+        }
+    }
+
 }
