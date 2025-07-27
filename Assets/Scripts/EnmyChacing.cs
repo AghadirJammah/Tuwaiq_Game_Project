@@ -37,16 +37,13 @@ public class EnmyChacing : MonoBehaviour
     
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("ÊÚÑÖ ÇááÇÚÈ áåÌæã ãä ÇáÚÏæ!");
-        }
+        
 
         // ÇáÚÏæ íãæÊ ÅĞÇ ÃÕíÈ ÈÑÕÇÕÉ
         if (other.CompareTag("Bullet"))
         {
             Debug.Log("ÇáÚÏæ ãÇÊ ÈÓÈÈ ÇáÑÕÇÕÉ!");
-            anim.Play("Dying"); // ÇÓã ÃäíãíÔä ÇáãæÊ
+            anim.SetTrigger("isDying"); // ÇÓã ÃäíãíÔä ÇáãæÊ
             Destroy(gameObject, 1.5f); // ÍĞİ ÇáÚÏæ ÈÚÏ 1.5 ËÇäíÉ
         }
     }
