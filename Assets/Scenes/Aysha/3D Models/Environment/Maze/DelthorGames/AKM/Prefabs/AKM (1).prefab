@@ -528,7 +528,7 @@ GameObject:
   - component: {fileID: 4695447370324622447}
   m_Layer: 0
   m_Name: AKM (1)
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -543,7 +543,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.9992629, z: 0, w: -0.038387645}
   m_LocalPosition: {x: -0.1079929, y: 1.0348616, z: 0.30572885}
-  m_LocalScale: {x: 0.09081512, y: 0.03471236, z: 0.0210405}
+  m_LocalScale: {x: 0.090815105, y: 0.03471236, z: 0.021040497}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6251054098453017830}
@@ -2071,6 +2071,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3198781363176307497}
+  - component: {fileID: 8228770202556479597}
   m_Layer: 0
   m_Name: GameObject (1)
   m_TagString: Untagged
@@ -2086,13 +2087,40 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5925069435595573152}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.9999077, y: -0, z: -0, w: 0.013594526}
-  m_LocalPosition: {x: 0, y: 1.477, z: -9.926}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.7007185, y: -0.70694506, z: 0.09483426, w: 0.015123175}
+  m_LocalPosition: {x: -0.51, y: -0.24, z: -6.48}
+  m_LocalScale: {x: 2.7344, y: 2.7344, z: 2.7271}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8197855859605579184}
-  m_LocalEulerAnglesHint: {x: -178.442, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 173.518, y: 8.932999, z: 270}
+--- !u!54 &8228770202556479597
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5925069435595573152}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5936102645573418351
 GameObject:
   m_ObjectHideFlags: 0
