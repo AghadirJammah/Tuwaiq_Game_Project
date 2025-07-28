@@ -2342,7 +2342,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c41f261589613314ea5c683da94020f7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -24.38
+      value: -22.81
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c41f261589613314ea5c683da94020f7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2350,7 +2350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c41f261589613314ea5c683da94020f7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.34
+      value: 4.29
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c41f261589613314ea5c683da94020f7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -12038,7 +12038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb902de79c88aa488c96fe90b12f305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 1725660982}
+  rb: {fileID: 0}
   speed: 5
   rotationSpeed: 5
   anim: {fileID: 1725660984}
@@ -12133,6 +12133,7 @@ MonoBehaviour:
   BulletPrefap: {fileID: 670445844896703174, guid: 90bec1425cd22f24f8f22b94c78e0a7c, type: 3}
   FirePoint: {fileID: 1852244317}
   BulletSpeed: 3
+  audioSource: {fileID: 0}
 --- !u!1001 &1727878035
 PrefabInstance:
   m_ObjectHideFlags: 0

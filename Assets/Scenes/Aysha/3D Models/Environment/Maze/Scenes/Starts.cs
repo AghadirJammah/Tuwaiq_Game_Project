@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Starts : MonoBehaviour
@@ -18,4 +19,6 @@ public class Starts : MonoBehaviour
             Time.timeScale = 1f;
         }
     }
+ 
+
 }
