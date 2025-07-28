@@ -2,22 +2,24 @@
 
 public class PlayerController : MonoBehaviour
 {
-    public CharacterController controller;
-    public float speed = 20f;
-    public float rotationSpeed = 20f;
+    public Rigidbody rb;
+    public float speed = 5f;
+    public float rotationSpeed = 10f;
     public Animator anim;
     public int health = 4;
     public GameObject Player;
 
-    public float damageCooldown = 1.0f; // المدة بين الضربات
+    public float damageCooldown = 1.0f;
     private float lastDamageTime = 0f;
     private bool isDead = false;
+
+    private Vector3 moveDirection;
 
     void Update()
     {
         if (isDead) return;
 
-        Vector3 move = Vector3.zero;
+        moveDirection = Vector3.zero;
         Vector3 targetDirection = Vector3.zero;
 
         if (Input.GetKey(KeyCode.W))
@@ -40,12 +42,14 @@ public class PlayerController : MonoBehaviour
 
         if (targetDirection != Vector3.zero)
         {
+            // دوران اللاعب باتجاه الحركة
             Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-            move = targetDirection;
-        }
 
-        controller.Move(move.normalized * speed * Time.deltaTime);
+            // تحريك اللاعب
+            moveDirection = targetDirection.normalized * speed * Time.fixedDeltaTime;
+            rb.MovePosition(rb.position + moveDirection);
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -70,6 +74,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 }
+
 
 
 
