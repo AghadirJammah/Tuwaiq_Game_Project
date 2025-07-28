@@ -3,8 +3,8 @@
 public class PlayerController : MonoBehaviour
 {
     public CharacterController controller;
-    public float speed = 20f;
-    public float rotationSpeed = 20f;
+    public float speed = 5f;
+    public float rotationSpeed = 5f;
     public Animator anim;
     public int health = 4;
     public GameObject Player;
