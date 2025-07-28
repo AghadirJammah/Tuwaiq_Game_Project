@@ -1,5 +1,5 @@
 ﻿
-
+//edit
 using UnityEngine;
 
 public class GunManagerAKM : MonoBehaviour
