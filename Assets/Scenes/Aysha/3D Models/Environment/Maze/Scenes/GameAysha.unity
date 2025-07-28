@@ -12040,7 +12040,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   rb: {fileID: 0}
+=======
+  controller: {fileID: 1725660982}
+>>>>>>> parent of 6948ba7 (aa)
 =======
   controller: {fileID: 1725660982}
 >>>>>>> parent of 6948ba7 (aa)
@@ -12143,7 +12147,10 @@ MonoBehaviour:
   BulletSpeed: 3
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   audioSource: {fileID: 0}
+=======
+>>>>>>> parent of 6948ba7 (aa)
 =======
 >>>>>>> parent of 6948ba7 (aa)
 =======
@@ -15068,9 +15075,12 @@ SceneRoots:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 556627071}
   - {fileID: 893849755}
   - {fileID: 615468089}
+=======
+>>>>>>> parent of 6948ba7 (aa)
 =======
 >>>>>>> parent of 6948ba7 (aa)
 =======
