@@ -525,6 +525,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8197855859605579184}
+  - component: {fileID: 4695447370324622447}
   m_Layer: 0
   m_Name: AKM (1)
   m_TagString: Bullet
@@ -584,6 +585,21 @@ Transform:
   - {fileID: 3198781363176307497}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -184.4, z: 0}
+--- !u!114 &4695447370324622447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157918157571794135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ddaf90605d3fbe4db74220c4561ea7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BulletPrefap: {fileID: 670445844896703174, guid: 90bec1425cd22f24f8f22b94c78e0a7c, type: 3}
+  FirePoint: {fileID: 3198781363176307497}
+  BulletSpeed: 3
 --- !u!1 &1314774295305904251
 GameObject:
   m_ObjectHideFlags: 0
