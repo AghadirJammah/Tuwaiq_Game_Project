@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 smoothVelocity = Vector3.zero;
     public float smoothTime = 0.1f;
 
+    public AudioSource audioS2;
+
     void Update()
     {
         if (isDead) return;
@@ -29,13 +31,32 @@ public class PlayerController : MonoBehaviour
             anim.Play("Shooting");
 
             if (Input.GetKey(KeyCode.UpArrow))
+            {
                 targetDirection = transform.forward;
+                audioS2.Play();
+            }
+
             else if (Input.GetKey(KeyCode.DownArrow))
+            {
+
+
                 targetDirection = -transform.forward;
+                audioS2.Play();
+            }
             else if (Input.GetKey(KeyCode.RightArrow))
+            {
+
+
                 targetDirection = transform.right;
+                audioS2.Play();
+            }
             else if (Input.GetKey(KeyCode.LeftArrow))
+            {
+
+
                 targetDirection = -transform.right;
+                audioS2.Play();
+            }
         }
         else
         {

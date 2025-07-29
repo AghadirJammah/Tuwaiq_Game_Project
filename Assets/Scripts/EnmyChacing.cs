@@ -13,6 +13,7 @@ public class EnmyChacing : MonoBehaviour
 
     public float attackRange = 2f;
     public float chaseRange = 10f;
+    public AudioSource audioS1;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -26,6 +27,7 @@ public class EnmyChacing : MonoBehaviour
         if (distance <= attackRange)
         {
             anim.Play("Zombie Attack");
+            audioS1.Play();
         }
         else
         {
