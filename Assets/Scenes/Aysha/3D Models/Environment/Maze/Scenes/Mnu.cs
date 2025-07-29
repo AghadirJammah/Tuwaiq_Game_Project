@@ -14,4 +14,19 @@ public class Mnu : MonoBehaviour
         imageScreen.SetActive(false);
         rawImageScreen.SetActive(true);
     }
+    public void GoTohowToPlayPanel()
+    {
+        howToPlayPanel.SetActive(true);
+        gamePanel.SetActive(false);
+        imageScreen.SetActive(false);
+        rawImageScreen.SetActive(false);
+    }
+    public void GoToimageScreen()
+    {
+        howToPlayPanel.SetActive(false);
+        gamePanel.SetActive(false);
+        imageScreen.SetActive(true);
+        rawImageScreen.SetActive(false);
+    }
+
 }

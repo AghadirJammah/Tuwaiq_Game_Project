@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
     public int health = 4;
     public GameObject Player;
+    public Transform Camera;
 
     public float damageCooldown = 1.0f;
     private float lastDamageTime = 0f;
@@ -21,38 +22,31 @@ public class PlayerController : MonoBehaviour
     {
         if (isDead) return;
 
-        moveDirection = Vector3.zero;
-        Vector3 targetDirection = Vector3.zero;
+        float inputX = Input.GetAxis("Horizontal");
+        float inputY = Input.GetAxis("Vertical");
 
-        if (Input.GetKey(KeyCode.W))
+        Vector3 movePose = Vector3.zero;
+        movePose = transform.forward * inputY + transform.right * inputX;
+        rb.linearVelocity += movePose * speed * Time.deltaTime;
+
+        float inputXM = Input.GetAxis("Mouse X");
+        transform.localEulerAngles += new Vector3(0, inputXM,0);
+
+        float inputYM = Input.GetAxis("Mouse Y");
+        Camera.localEulerAngles -= new Vector3(inputYM, 0, 0);
+
+        if(inputX == 0 && inputY == 0)
         {
-            anim.Play("Shooting");
+            rb.linearVelocity = Vector3.zero;
+            anim.Play("idle");
 
-            if (Input.GetKey(KeyCode.UpArrow))
-                targetDirection = transform.forward;
-            else if (Input.GetKey(KeyCode.DownArrow))
-                targetDirection = -transform.forward;
-            else if (Input.GetKey(KeyCode.RightArrow))
-                targetDirection = transform.right;
-            else if (Input.GetKey(KeyCode.LeftArrow))
-                targetDirection = -transform.right;
         }
         else
         {
-            anim.Play("idle");
+            anim.Play("Shooting");
         }
 
-        if (targetDirection != Vector3.zero)
-        {
-            // دوران ناعم باستخدام Slerp
-            Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
-            // تحريك ناعم باستخدام SmoothDamp
-            Vector3 targetPosition = rb.position + (targetDirection.normalized * speed * Time.deltaTime);
-            Vector3 smoothPosition = Vector3.SmoothDamp(rb.position, targetPosition, ref smoothVelocity, smoothTime);
-            rb.MovePosition(smoothPosition);
-        }
     }
 
     void OnTriggerEnter(Collider other)
