@@ -4,19 +4,16 @@ public class PlayerController : MonoBehaviour
 {
     public Rigidbody rb;
     public float speed = 5f;
-    public float rotationSpeed = 5f;
     public Animator anim;
     public int health = 4;
-    public GameObject Player;
+   
     public Transform Camera;
-
-    public float damageCooldown = 1.0f;
-    private float lastDamageTime = 0f;
+    public AudioSource audioWalk;
+    public AudioSource audioDie;
     private bool isDead = false;
 
-    private Vector3 moveDirection;
-    private Vector3 smoothVelocity = Vector3.zero;
-    public float smoothTime = 0.1f;
+    
+    
 
     void Update()
     {
@@ -44,30 +41,26 @@ public class PlayerController : MonoBehaviour
         else
         {
             anim.Play("Shooting");
+            audioWalk.Play();
         }
 
 
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
-        if (other.CompareTag("Enmey") && health > 0)
+        if (collision.gameObject.CompareTag("Enmey") && health > 0)
         {
-            if (Time.time - lastDamageTime > damageCooldown)
-            {
-                lastDamageTime = Time.time;
-
                 health--;
-                Debug.Log("Health: " + health);
-
+                
                 if (health <= 0 && !isDead)
                 {
                     isDead = true;
                     anim.Play("Dying");
-                    Debug.Log("اللاعب مات");
+                    audioDie.Play();
                     this.enabled = false;
                 }
-            }
+            
         }
     }
 }

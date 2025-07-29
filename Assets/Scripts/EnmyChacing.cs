@@ -11,8 +11,8 @@ public class EnmyChacing : MonoBehaviour
     NavMeshAgent agent;
     public Animator anim;
 
-    public float attackRange = 2f;
-    public float chaseRange = 10f;
+    public float attackRange = 1f;
+    
     public AudioSource audioS1;
     void Start()
     {
@@ -26,13 +26,16 @@ public class EnmyChacing : MonoBehaviour
         float distance = Vector3.Distance(transform.position, player.position);
         if (distance <= attackRange)
         {
+            
             anim.Play("Zombie Attack");
-            audioS1.Play();
+            
+
         }
         else
         {
-
+            
             agent.SetDestination(player.position);
+            audioS1.Play();
             anim.Play("Zombie Run");
 
         }
@@ -43,8 +46,7 @@ public class EnmyChacing : MonoBehaviour
     {
         if (other.CompareTag("Bullet"))
         {
-            Debug.Log("ÇáÚÏæ ãÇÊ ÈÓÈÈ ÇáÑÕÇÕÉ!");
-            gameObject.SetActive(false); // íÎÊÝí
+            gameObject.SetActive(false); 
         }
     }
 
