@@ -13,6 +13,7 @@ public class Starts : MonoBehaviour
     public GameObject StartPanel;
     public GameObject PausePanel;
     public bool isPaused = false;
+    public AudioSource audioS;
 
     void Update()
     {
@@ -34,11 +35,13 @@ public class Starts : MonoBehaviour
             {
                 PausePanel.SetActive(false);
                 Time.timeScale = 1;
+                audioS.Play();
             }
             else
             {
                 PausePanel.SetActive(true);
                 Time.timeScale = 0;
+                audioS.Pause();
             }
             isPaused = !isPaused;
         }
