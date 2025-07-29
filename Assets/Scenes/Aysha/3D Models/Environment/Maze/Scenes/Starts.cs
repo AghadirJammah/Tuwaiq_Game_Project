@@ -11,6 +11,9 @@ public class Starts : MonoBehaviour
 
     // Update is called once per frame
     public GameObject StartPanel;
+    public GameObject PausePanel;
+    public bool isPaused = false;
+
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.Space))
@@ -18,7 +21,28 @@ public class Starts : MonoBehaviour
             StartPanel.SetActive(false);
             Time.timeScale = 1f;
         }
-    }
- 
+        Pause();
 
-}
+
+    }
+    public void Pause()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+
+            if (isPaused)
+            {
+                PausePanel.SetActive(false);
+                Time.timeScale = 1;
+            }
+            else
+            {
+                PausePanel.SetActive(true);
+                Time.timeScale = 0;
+            }
+            isPaused = !isPaused;
+        }
+    }
+
+
+} //A

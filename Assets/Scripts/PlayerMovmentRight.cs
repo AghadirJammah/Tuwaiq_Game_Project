@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
-// edit
+
 public class PlayerController : MonoBehaviour
 {
     public Rigidbody rb;
     public float speed = 5f;
-    public float rotationSpeed = 10f;
+    public float rotationSpeed = 5f;
     public Animator anim;
     public int health = 4;
     public GameObject Player;
@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     private bool isDead = false;
 
     private Vector3 moveDirection;
+    private Vector3 smoothVelocity = Vector3.zero;
+    public float smoothTime = 0.1f;
 
     void Update()
     {
@@ -42,13 +44,14 @@ public class PlayerController : MonoBehaviour
 
         if (targetDirection != Vector3.zero)
         {
-            // دوران اللاعب باتجاه الحركة
+            // دوران ناعم باستخدام Slerp
             Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
-            // تحريك اللاعب
-            moveDirection = targetDirection.normalized * speed * Time.fixedDeltaTime;
-            rb.MovePosition(rb.position + moveDirection);
+            // تحريك ناعم باستخدام SmoothDamp
+            Vector3 targetPosition = rb.position + (targetDirection.normalized * speed * Time.deltaTime);
+            Vector3 smoothPosition = Vector3.SmoothDamp(rb.position, targetPosition, ref smoothVelocity, smoothTime);
+            rb.MovePosition(smoothPosition);
         }
     }
 
@@ -74,6 +77,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 }
+
 
 
 
