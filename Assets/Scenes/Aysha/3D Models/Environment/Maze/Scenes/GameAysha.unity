@@ -12038,7 +12038,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb902de79c88aa488c96fe90b12f305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
   rb: {fileID: 0}
+=======
+  controller: {fileID: 1725660982}
+>>>>>>> parent of 6948ba7 (aa)
+=======
+  controller: {fileID: 1725660982}
+>>>>>>> parent of 6948ba7 (aa)
+=======
+  controller: {fileID: 1725660982}
+>>>>>>> parent of 6948ba7 (aa)
   speed: 5
   rotationSpeed: 5
   anim: {fileID: 1725660984}
@@ -12133,7 +12145,16 @@ MonoBehaviour:
   BulletPrefap: {fileID: 670445844896703174, guid: 90bec1425cd22f24f8f22b94c78e0a7c, type: 3}
   FirePoint: {fileID: 1852244317}
   BulletSpeed: 3
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
   audioSource: {fileID: 0}
+=======
+>>>>>>> parent of 6948ba7 (aa)
+=======
+>>>>>>> parent of 6948ba7 (aa)
+=======
+>>>>>>> parent of 6948ba7 (aa)
 --- !u!1001 &1727878035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15051,6 +15072,18 @@ SceneRoots:
   - {fileID: 594625230}
   - {fileID: 348400922}
   - {fileID: 2037806594}
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 556627071}
   - {fileID: 893849755}
   - {fileID: 615468089}
+=======
+>>>>>>> parent of 6948ba7 (aa)
+=======
+>>>>>>> parent of 6948ba7 (aa)
+=======
+>>>>>>> parent of 6948ba7 (aa)
+=======
+>>>>>>> parent of 6948ba7 (aa)
