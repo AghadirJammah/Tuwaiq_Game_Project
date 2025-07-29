@@ -1,10 +1,16 @@
 ﻿using UnityEngine;
-// edit
+
 public class PlayerController : MonoBehaviour
 {
+<<<<<<< HEAD
     public CharacterController controller;
     public float speed = 20f;
     public float rotationSpeed = 20f;
+=======
+    public Rigidbody rb;
+    public float speed = 5f;
+    public float rotationSpeed = 5f;
+>>>>>>> 2508671d8d8433d7804ab93df8890cac172a51f3
     public Animator anim;
     public int health = 4;
     public GameObject Player;
@@ -13,6 +19,13 @@ public class PlayerController : MonoBehaviour
     private float lastDamageTime = 0f;
     private bool isDead = false;
 
+<<<<<<< HEAD
+=======
+    private Vector3 moveDirection;
+    private Vector3 smoothVelocity = Vector3.zero;
+    public float smoothTime = 0.1f;
+
+>>>>>>> 2508671d8d8433d7804ab93df8890cac172a51f3
     void Update()
     {
         if (isDead) return;
@@ -40,9 +53,20 @@ public class PlayerController : MonoBehaviour
 
         if (targetDirection != Vector3.zero)
         {
+<<<<<<< HEAD
             Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
             move = targetDirection;
+=======
+            // دوران ناعم باستخدام Slerp
+            Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+
+            // تحريك ناعم باستخدام SmoothDamp
+            Vector3 targetPosition = rb.position + (targetDirection.normalized * speed * Time.deltaTime);
+            Vector3 smoothPosition = Vector3.SmoothDamp(rb.position, targetPosition, ref smoothVelocity, smoothTime);
+            rb.MovePosition(smoothPosition);
+>>>>>>> 2508671d8d8433d7804ab93df8890cac172a51f3
         }
 
         controller.Move(move.normalized * speed * Time.deltaTime);
@@ -78,3 +102,8 @@ public class PlayerController : MonoBehaviour
 
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 2508671d8d8433d7804ab93df8890cac172a51f3
