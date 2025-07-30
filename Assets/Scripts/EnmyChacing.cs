@@ -1,58 +1,73 @@
 using UnityEngine;
-using UnityEngine.AI;
 using System.Collections;
-//edit
+using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.Audio;
 
 public class EnmyChacing : MonoBehaviour
 {
-    // Start is called once before the first execution
-    // of Update after the MonoBehaviour is created
     public Transform player;
-    NavMeshAgent agent;
+    private NavMeshAgent agent;
     public Animator anim;
 
-    public float attackRange = 1f;
-    
-    public AudioSource audioS1;
+    public float attackRange = 2f;
+    public float chaseRange = 15f;
+
+    public AudioSource audioSource;
+
+    private bool isAttacking = false;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // ·«  ‘ €· «··⁄»… ≈–« «·Êﬁ  „ Êﬁ›
+        if (Time.timeScale == 0f)
+            return;
 
         float distance = Vector3.Distance(transform.position, player.position);
+
         if (distance <= attackRange)
         {
-            
+            // «·ÂÃÊ„
             anim.Play("Zombie Attack");
-            
 
+            if (!isAttacking)
+            {
+                audioSource.Play();
+                isAttacking = true;
+            }
+
+            // ≈Ìﬁ«› Õ—ﬂ… «·⁄œÊ √À‰«¡ «·ÂÃÊ„
+            agent.ResetPath();
+        }
+        else if (distance <= chaseRange)
+        {
+            // «·„ÿ«—œ…
+            agent.SetDestination(player.position);
+            anim.Play("Zombie Run");
+
+            isAttacking = false;
         }
         else
         {
-            
-            agent.SetDestination(player.position);
-            audioS1.Play();
-            anim.Play("Zombie Run");
-
+            // «‰ Ÿ«— (Idle) ≈–« «··«⁄» »⁄Ìœ
+            agent.ResetPath();
+            anim.Play("Zombie Idle"); //  √ﬂœ √‰ ·œÌﬂ √‰Ì„Ì‘‰ »«”„ Idle √Ê €Ì¯— «·«”„ »„« Ì‰«”»ﬂ
+            isAttacking = false;
         }
-
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Bullet"))
         {
-            gameObject.SetActive(false); 
+            gameObject.SetActive(false);
         }
     }
-
-
 }
-
-
 
 
