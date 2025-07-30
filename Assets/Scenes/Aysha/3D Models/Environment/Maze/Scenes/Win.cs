@@ -5,10 +5,10 @@ public class Win : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    public GameObject Canvas;      // «·ﬂ«‰›” «··Ì ›ÌÂ “— «·›Ê“
-    public GameObject Canvas1;     // «·ﬂ«‰›” «··Ì ›ÌÂ «·ﬁ«∆„…
+    public GameObject Canvas;     
+    public GameObject Canvas1;    
     public GameObject Image;
-    public GameObject Panel;// «·‹ Child «··Ì «”„Â Menu œ«Œ· mainCanvas
+    public GameObject Panel;
 
     public void OpenMenuFromWin()
     {
