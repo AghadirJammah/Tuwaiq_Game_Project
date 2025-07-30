@@ -10,10 +10,11 @@ public class PlayerController : MonoBehaviour
     public Transform Camera;
     public AudioSource audioWalk;
     public AudioSource audioDie;
-    private bool isDead = false;
+    public bool isDead = false;
 
-    
-    
+
+    public GameObject lose;
+    public AudioSource audiolose;
 
     void Update()
     {
@@ -58,10 +59,18 @@ public class PlayerController : MonoBehaviour
                     isDead = true;
                     anim.Play("Dying");
                     audioDie.Play();
+                    loser();
                     this.enabled = false;
                 }
             
         }
+    }
+    public void loser()
+    {
+        lose.SetActive(true);
+        Time.timeScale = 1f;
+        audiolose.Play();
+
     }
 }
 
